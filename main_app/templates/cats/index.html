@@ -9,7 +9,9 @@
       <span class="card-title">{{ cat.name }}</span>
       <p>Breed: {{ cat.breed }}</p>
       <p>Description: {{ cat.description }}</p>
-      {% if cat.age > 0 %}
+      <!-- this is a line of python -->
+      {% if cat.age > 0 %} 
+        <!-- this is just a like to get data -->
         <p>Age: {{ cat.age }}</p>
       {% else %}
         <p>Age: Kitten</p>
