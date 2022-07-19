@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Add the following import
 from django.http import HttpResponse
-from models import Cat
+from .models import Cat
 
 #  -------- DEFINE VIEWS -----------------
 
@@ -17,3 +17,8 @@ def about(request):
 def cats_index(request):
   cats = Cat.objects.all()
   return render(request, 'cats/index.html', { 'cats': cats }) #creating dictionary / object - cats are equal to cats
+
+
+def cats_detail(request, cat_id):
+  cat = Cat.objects.get(id=cat_id)
+  return render(request, 'cats/detail.html', { 'cat': cat })
