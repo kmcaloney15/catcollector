@@ -8,7 +8,8 @@ from .models import Cat
 
 # Define the home view
 def home(request): #request is like .req in express 
-    return HttpResponse('<h1>Hello /ᐠ｡‸｡ᐟ\ﾉ</h1>') # this is like res.send in express
+    # return HttpResponse('<h1>Hello /ᐠ｡‸｡ᐟ\ﾉ</h1>') # this is like res.send in express
+    return render(request, 'home.html')
 
 def about(request):
     return render(request, 'about.html') # render looks for templates
@@ -22,3 +23,9 @@ def cats_index(request):
 def cats_detail(request, cat_id):
   cat = Cat.objects.get(id=cat_id)
   return render(request, 'cats/detail.html', { 'cat': cat })
+
+
+# def CatCreate(request, cat_id):
+#     cat = Cat.objects.get(id=cat_id)
+#     return HttpResponse(f"Filler cat create page")
+    # return render(request, 'cats/create.html', { 'cat': cat })
